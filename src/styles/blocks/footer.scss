@@ -1,0 +1,84 @@
+@use "../_mixin/mixin" as *;
+@use "../_variables/variables" as *;
+
+.footer {
+    color: rgba($ui-color-white, .4);
+    padding: 44px 0 40px;
+
+    &__wrapper {
+        @include ui-flex(space-between);
+        position: relative;
+        @media screen and (max-width: $ui-breakpoint-xl-max) {
+            @include ui-flex(space-between, flex-start, wrap, column);
+            gap: 74px;
+        }
+    }
+
+    &__left {
+        @include ui-flex(flex-start, flex-start, wrap, column);
+        gap: 224px;
+        border-right: 1px solid rgba($color: $ui-color-white, $alpha: .3);
+        padding-right: 217px;
+        @media screen and (max-width: $ui-breakpoint-xxl-max) {
+            padding-right: 30px;
+        }
+        @media screen and (max-width: $ui-breakpoint-xl-max) {
+            @include ui-flex(space-between, flex-start, nowrap, row);
+            gap: 74px;
+            width: 100%;
+            border-right: 1px solid rgba($color: $ui-color-white, $alpha: 0);
+            border-bottom: 1px solid rgba($color: $ui-color-white, $alpha: .3);
+            padding-bottom: 57px;
+        }
+        @media screen and (max-width: $ui-breakpoint-md-max) {
+            padding-right: 0;
+        }
+      }
+      &__nav {
+        @media screen and (max-width: $ui-breakpoint-md-max) {
+            width: 35%;
+        }
+        h4 {
+            font-family: 'IBMPlexSans-Regular';
+            font-size: $ui-font-size-sm;
+            line-height: $ui-font-size-title-h6;
+            text-transform: $ui-text-transform;
+            
+        }
+    }
+    &__menu {
+        @include ui-flex(flex-start, flex-start);
+        gap: 24px;
+        a {
+            color: rgba($ui-color-white, .67);
+            font-family: 'IBMPlexSans-Medium';
+            font-size: $ui-font-size-content;
+            line-height: $line-height-md;
+            text-transform:  $ui-text-transform;
+        }
+        @media screen and (max-width: $ui-breakpoint-xl-max) {
+            @include ui-flex(flex-start, flex-start, wrap, column);
+        }
+        @media screen and (max-width: $ui-breakpoint-md-max) {
+            width: 45%;
+        }
+    }
+
+    &__logo {
+        width: 165px;
+        margin-bottom: 170px;
+        img {
+            width: 100%;
+        }
+        @media screen and (max-width: $ui-breakpoint-xl-max) {
+            margin-bottom: 81px;
+        }
+    }
+
+    &__copyright {
+        color: rgba($ui-color-white, .5);
+        font-family: 'IBMPlexSans-Regular';
+        font-size: $ui-font-size-sm;
+        line-height: $line-height-md;
+    }
+}

@@ -1,0 +1,54 @@
+
+@use "../_variables/variables" as *;
+
+body,
+html {
+  overflow-x: hidden;
+  margin: 0 auto;
+  background-color: $ui-color-obsidian-blue;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.container {
+  max-width: $ui-breakpoint-xxl-max;
+  padding: 0 10px;
+  margin: 0 auto;
+
+  @media screen and (max-width: $ui-breakpoint-xxl-max) {
+    max-width: $ui-breakpoint-xl-max;
+  }
+
+  @media screen and (max-width: $ui-breakpoint-xl-max) {
+    max-width: $ui-breakpoint-md-max;
+  }
+
+  @media screen and (max-width: $ui-breakpoint-md-max) {
+    max-width: $ui-breakpoint-sm-max;
+  }
+
+  @media screen and (max-width: $ui-breakpoint-sm-max) {
+    max-width: $ui-breakpoint-s-max;
+  }
+}
+
+.bg {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  width: 639px;
+  height: 40px;
+  background-color: #fff;
+  clip-path: polygon(0 0, 90% 0, 100% 100%, 0 100%, 0 0);
+  z-index: 0;
+  @media screen and (max-width: $ui-breakpoint-md-max) {
+      width: 430px;
+  }
+  @media screen and (max-width: $ui-breakpoint-sm-max) {
+      width: 272px;
+      height: 24px;
+      top: -24px;
+  }
+}

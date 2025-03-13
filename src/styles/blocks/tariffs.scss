@@ -1,0 +1,245 @@
+@use "../_mixin/mixin" as *;
+@use "../_variables/variables" as *;
+
+.tariffs {
+    padding: 96px 0;
+    @media screen and (max-width: $ui-breakpoint-xl-max) {
+       margin-top: 125px;
+       padding: 56px 0;
+    }
+    &__wrapper {
+        @include ui-flex(center);
+        gap: 20px;
+    }
+    .subtitle {
+        margin-bottom: 40px;
+        @media screen and (max-width: $ui-breakpoint-sm-max) {
+            margin-bottom: 28px;
+            line-height: 36px;
+        }
+    }
+
+    .buttons {
+        max-width: 413px;
+        background: rgba(107, 84, 255, 0.4);
+        border-radius: 4px;
+        padding: 4px;
+        margin-bottom: 44px;
+        @include ui-flex(space-between, center);
+        @media screen and (max-width: $ui-breakpoint-sm-max) {
+            margin-bottom: 24px;
+        }
+
+        .btn {
+                font-family: 'IBMPlexSans-Medium ';
+                border: none;
+                box-shadow: none;
+                font-size: $ui-font-size-title-h5;
+                line-height: 28px;
+                padding: 8px 74px 8px 66px;
+                color: $ui-color-blue;
+                @media screen and (max-width: $ui-breakpoint-xxl-max) {
+                    display: block;
+                }
+                @media screen and (max-width: $ui-breakpoint-sm-max) {
+                    font-family: 'IBMPlexSans-Bold';
+                    font-size: 18px;
+                    padding: 10px 60px;
+                }
+
+            &.futures {
+                letter-spacing: -0.96px;
+                text-transform: $ui-text-transform;
+                padding: 8px 40px;
+            }
+            &.active {
+                background: #57e1ff;
+                color: #030718;
+            }
+        }
+    }
+}
+
+.tariff-card {
+    max-width: 413px;
+    border-radius: 8px;
+    border: 1px solid $ui-color-purple;
+    padding: 24px 33px;
+    @media screen and (max-width: $ui-breakpoint-md-max) {
+        padding: 16px;
+     }
+    .tariff-header h3 {
+        color: $ui-color-white;
+        font-family: 'IBMPlexSans-Medium';
+        font-size: $ui-font-size-title-h3;
+        line-height: 48px;
+        letter-spacing: -1.28px;
+        margin-bottom: 56px;
+        @media screen and (max-width: $ui-breakpoint-md-max) {
+            font-size: $ui-font-size-title-h6;
+            line-height: 28px;
+            margin-bottom: 24px; 
+         }
+    }
+
+    .tariff-features {
+        list-style: none;
+        padding: 0;
+        margin-bottom: 112px;
+        @media screen and (max-width: $ui-breakpoint-md-max) {
+           margin-bottom: 32px;
+         }
+        li {
+            font-family: 'IBMPlexSans-Regular';
+            font-size: $ui-font-size-content ;
+            padding: 8px 0;
+            border-bottom: 1px dashed rgba($ui-color-white, $alpha: 0.2);
+            color: $ui-color-white;
+            svg {
+                margin-right: 10px;
+                width: 12px;
+                height: 12px;
+            }
+        }
+    }
+    .tariff__prices {
+        @include ui-flex(space-between, center);
+        margin-bottom: 26px;
+    }
+    .tariff-price {
+        @include ui-flex(center, center);
+        gap: 10px;
+        position: relative;
+
+        .price-new {
+            color: $ui-color-white;
+            font-family: 'IBMPlexSans-Medium';
+            font-size: $ui-font-size-title-h1-mob;
+            line-height: 40px;
+            letter-spacing: -1.4px;
+        }
+
+        .discount {
+            color: $ui-color-lime-aqua;
+            font-family: 'IBMPlexSans-Medium';
+            font-size: 18px;
+            line-height: $line-height-md;
+            letter-spacing: -0.72px;
+            text-transform: $ui-text-transform;
+            position: absolute;
+            right: -45px;
+            top: -3px;
+        }
+    }
+    .custom-select {
+        width: 100%;
+        font-family: 'IBMPlexSans-Regular';
+        padding-right: 20px;
+      }
+      
+      .selected-option {
+        color: $ui-color-white;
+        padding: 10px;
+        cursor: pointer;
+        border-radius: 4px;
+      }
+      
+      .options-list {
+        position: absolute;
+        top: 90%;
+        left: 0;
+        right: 0;
+        background-color: rgb(93 97 107);
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        border-radius: 4px;
+        display: none;
+        box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+      }
+      
+      .option {
+        padding: 8px;
+        color: $ui-color-white;
+        cursor: pointer;
+      }
+      
+      .option:hover {
+        background-color: rgba($ui-color-white, 0.4);
+      }
+      
+      .custom-select.active .options-list {
+        display: block;
+      }
+    .tariff-duration {
+        @include ui-flex(flex-start, flex-start, wrap, column);
+        font-size: $ui-font-size-sm;
+        background-color: rgba($ui-color-white, $alpha: 0.2);
+        color: $ui-color-white;
+    
+        label {
+            display: none;
+        }
+    
+        .select-wrapper {
+            position: relative;
+            display: flex;
+            align-items: center;
+            padding: 6px 5px 6px 8px;
+            border-radius: 4px;
+            background: rgba(255, 255, 255, 0.20);
+            width: 100%;
+    
+            select {
+                padding: 6px 5px;
+                font-size: 14px;
+                border: none;
+                background: transparent;
+                color: #fff;
+                cursor: pointer;
+                width: 100%;
+                appearance: none;
+            }
+    
+            svg {
+                position: absolute;
+                right: 8px;
+                pointer-events: none;
+            }
+        }
+    }
+
+    .tariff-btn {
+        font-family: 'IBMPlexSans-Medium';
+        border-radius: 3px;
+        background: $ui-color-blue;
+        box-shadow: 0px 0px 4px 0px $ui-color-blue;
+        width: 100%;
+        font-size: $ui-font-size-content;
+        line-height: $ui-font-size-title-h6;
+        text-transform: $ui-text-transform;
+        padding: 6px 0;
+
+        span {
+            color: #030718;
+            font-family: 'IBMPlexSans-Regular';
+            font-size: 12px;
+            line-height: 16px;
+            display: block;
+        }
+
+        &:hover {
+            color: $ui-color-blue;
+            background: rgba($ui-color-blue, 0.2);
+        }
+        &:hover span {
+            color: $ui-color-blue;
+        }
+    }
+    &--vip {
+        background: $ui-color-purple;
+        .tariff-features {
+            margin-bottom: 50px;
+        }
+    }
+}

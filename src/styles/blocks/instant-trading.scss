@@ -1,0 +1,282 @@
+@use "../_mixin/mixin" as *;
+@use "../_variables/variables" as *;
+
+.instant-trading {
+    font-family: 'IBMPlexSans-Regular';
+    padding: 160px 0 134px;
+
+    @media screen and (max-width: $ui-breakpoint-xl-max) {
+        padding: 70px 0 134px;
+    }
+
+    @media screen and (max-width: $ui-breakpoint-sm-max) {
+        padding: 40px 0 61px;
+    }
+
+    &__wrapper {
+        @include ui-flex(space-between, flex-start);
+
+        @media screen and (max-width: $ui-breakpoint-xl-max) {
+            @include ui-flex(space-between, flex-start, wrap, column);
+            gap: 33px;
+        }
+    }
+
+    &__info {
+        max-width: 630px;
+
+        @media screen and (max-width: $ui-breakpoint-xxl-max) {
+            max-width: 480px;
+        }
+
+        @media screen and (max-width: $ui-breakpoint-xl-max) {
+            max-width: 100%;
+        }
+    }
+
+    .title {
+        color: $ui-color-white;
+        font-family: "IBMPlexSans-Bold";
+        font-size: $ui-font-size-title-h1;
+        line-height: $line-height-xxl;
+        letter-spacing: -2.4px;
+        text-transform: $ui-text-transform;
+        margin-bottom: 12px;
+
+        @media screen and (max-width: $ui-breakpoint-xxl-max) {
+            font-size: $ui-font-size-title-h2;
+        }
+
+        @media screen and (max-width: $ui-breakpoint-sm-max) {
+            font-size: $ui-font-size-title-h1-mob;
+            line-height: $line-height-xxl-mob;
+        }
+    }
+
+    &__description {
+        color: $ui-color-soft-sky;
+        font-size: $ui-font-size-content;
+        line-height: $line-height-md;
+        padding-right: 65px;
+        margin-bottom: 24px;
+        opacity: 0.8;
+
+        @media screen and (max-width: $ui-breakpoint-sm-max) {
+            padding-right: 0;
+        }
+    }
+
+    &__free {
+        color: $ui-color-white-soft;
+        font-size: $ui-font-size-sm;
+        line-height: $line-height-md;
+    }
+}
+
+.subscribe-form {
+    margin-bottom: 12px;
+
+    .input-wrapper {
+        position: relative;
+        display: flex;
+        align-items: center;
+        max-width: 500px;
+        border-radius: 4px;
+        overflow: hidden;
+
+        input {
+            width: 100%;
+            padding: 20px 109px 20px 16px;
+            border: none;
+            outline: none;
+            font-size: $ui-font-size-content;
+            background: $ui-color-navy-night;
+            text-transform: $ui-text-transform;
+        }
+
+        .reg {
+            position: absolute;
+            right: 3px;
+            border: none;
+            padding: 16px 24px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: 0.3s;
+
+            @media screen and (max-width: $ui-breakpoint-xxl-max) {
+                display: block;
+            }
+        }
+    }
+}
+
+.rectangles {
+    position: relative;
+    width: 469px;
+    height: 209px;
+
+    @media screen and (max-width: $ui-breakpoint-xxl-max) {
+        width: 420px;
+    }
+
+    @media screen and (max-width: $ui-breakpoint-xl-max) {
+        width: 469px;
+        margin: 0 auto;
+        order: -1;
+    }
+
+    @media screen and (max-width: $ui-breakpoint-sm-max) {
+        width: 300px;
+        height: 134px;
+        margin: 0;
+    }
+}
+
+@keyframes moveDownRight {
+    0% {
+        top: 0;
+        left: 0;
+    }
+
+    100% {
+        top: 40px;
+        left: 168px;
+
+    }
+}
+
+@keyframes moveDownRightMob {
+    0% {
+        top: 0;
+        left: 0;
+    }
+
+    100% {
+        top: 30px;
+        left: 124px;
+
+    }
+}
+
+.rectangle {
+    position: absolute;
+    width: 275px;
+    height: 163px;
+    @include ui-flex(space-between, flex-start, wrap, column);
+    padding: 15px;
+    color: $ui-color-purple;
+    border-radius: 10px;
+
+    @media screen and (max-width: $ui-breakpoint-xxl-max) {
+        width: 240px;
+    }
+
+    @media screen and (max-width: $ui-breakpoint-xl-max) {
+        width: 300px;
+    }
+
+    @media screen and (max-width: $ui-breakpoint-md-max) {
+        width: 240px;
+    }
+
+    @media screen and (max-width: $ui-breakpoint-sm-max) {
+        width: 176px;
+        height: 104px;
+    }
+
+    &.first {
+        border: 2px dashed $ui-color-purple;
+        opacity: 0.7;
+    }
+
+    &.second {
+        background-color: $ui-color-purple;
+        border: none;
+        top: 0;
+        left: 0;
+        color: $ui-color-white;
+        animation: moveDownRight .5s ease-in-out forwards;
+
+        @media screen and (max-width: $ui-breakpoint-sm-max) {
+            animation: moveDownRightMob .5s ease-in-out forwards;
+        }
+    }
+
+    &__text {
+        text-align: left;
+
+        @media screen and (max-width: $ui-breakpoint-sm-max) {
+            font-size: $ui-font-size-xs;
+        }
+
+        &__title {
+            font-family: 'IBMPlexSans-Medium';
+            font-size: $ui-font-size-title-h4;
+
+            @media screen and (max-width: $ui-breakpoint-sm-max) {
+                font-size: $ui-font-size-title-h6;
+            }
+        }
+    }
+
+    &__percent {
+        font-size: $ui-font-size-title-h6;
+        font-family: 'IBMPlexSans-Medium';
+    }
+}
+
+.line {
+    position: absolute;
+    width: 26px;
+    height: 2px;
+    background: $ui-color-purple;
+    transform: rotate(25deg);
+
+    @media screen and (max-width: $ui-breakpoint-sm-max) {
+        transform: rotate(40deg);
+    }
+
+    &.line1 {
+        top: 83%;
+        left: 30%;
+
+        @media screen and (max-width: $ui-breakpoint-xxl-max) {
+            top: 82%;
+            left: 34%;
+        }
+
+        @media screen and (max-width: $ui-breakpoint-xl-max) {
+            left: 30%;
+        }
+
+        @media screen and (max-width: $ui-breakpoint-sm-max) {
+            top: 85%;
+            left: 33%;
+
+        }
+    }
+
+    &.line2 {
+        top: 16%;
+        left: 59%;
+
+        @media screen and (max-width: $ui-breakpoint-xxl-max) {
+            left: 57%;
+        }
+
+        @media screen and (max-width: $ui-breakpoint-xl-max) {
+            left: 64%;
+        }
+
+        @media screen and (max-width: $ui-breakpoint-md-max) {
+            left: 51%;
+            top: 15%;
+        }
+
+        @media screen and (max-width: $ui-breakpoint-sm-max) {
+            top: 15%;
+            left: 58%;
+
+        }
+    }
+}

@@ -1,0 +1,169 @@
+@use "../_mixin/mixin" as *;
+@use "../_variables/variables" as *;
+
+.past-transition {
+    padding: 96px 0 178px;
+
+    @media screen and (max-width: $ui-breakpoint-sm-max) {
+        padding: 48px 0 77px;
+    }
+
+    &__title {
+        color: $ui-color-white;
+        margin-bottom: 4px;
+    }
+}
+
+.online {
+    color: $ui-color-lime-aqua;
+    font-family: 'IBMPlexSans-Regular';
+    font-size: $ui-font-size-sm;
+    line-height: $line-height-md;
+    letter-spacing: -0.56px;
+    @include ui-flex(flex-start, center);
+    margin-bottom: 72px;
+
+    &:before {
+        content: '';
+        display: block;
+        width: 7px;
+        height: 7px;
+        background-color: $ui-color-lime-aqua;
+        margin-right: 4px;
+        border-radius: 50%;
+
+    }
+}
+
+.carousel {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 20px;
+    position: relative;
+
+    &-container {
+        position: relative;
+        width: 100%;
+        overflow: visible;
+        cursor: pointer;
+    }
+
+    &-card {
+        min-width: 299px;
+        height: 208px !important;
+        background-color: $ui-color-purple;
+        font-size: 20px;
+        color: $ui-color-white;
+        margin-right: 20px;
+        flex-shrink: 0;
+        clip-path: polygon(0 0, 90% 0, 140% 100%, 0 100%, 0 0);
+        position: relative;
+        padding: 16px 16px 13px;
+        &:after {
+            content: '';
+            display: block;
+            background: url('../../images/shared/carousel-bg.svg') no-repeat;
+            background-size: contain;
+            width: 162px;
+            height: 160px;
+            position: absolute;
+            top: 8px;
+            right: -52px;
+        }
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+
+    &__title {
+        font-size: $ui-font-size-title-h6;
+        line-height: 28px;
+        letter-spacing: -0.8px;
+        text-transform: $ui-text-transform;
+        margin-bottom: 2px;
+    }
+
+    &__subtitle {
+        font-size: $ui-font-size-sm;
+        line-height: $line-height-sm;
+        letter-spacing: -0.28px;
+        opacity: 0.7;
+    }
+
+    &__procents {
+        span {
+            color: $ui-color-lime-aqua;
+            font-size: $ui-font-size-title-h4;
+            line-height: 36px;
+            letter-spacing: -0.56px;
+            text-transform: $ui-text-transform;
+            margin-right: 6px;
+        }
+        svg {
+            width: 9px;
+            height: 16px;
+        }
+    }
+}
+
+.slick-initialized .slick-slide.carousel-card {
+    @include ui-flex(space-between, flex-start, nowrap, column);
+}
+
+.blc__top {
+    color: $ui-color-white;
+    font-family: 'IBMPlexSans-Medium';
+}
+
+.blc__bottom {
+    color: $ui-color-white;
+    font-family: 'IBMPlexSans-Medium';
+    width: 100%;
+}
+
+.objective {
+    @include ui-flex(space-between, flex-start);
+    font-family: 'IBMPlexSans-Medium';
+    font-size: $ui-font-size-sm;
+    line-height: $line-height-sm;
+    letter-spacing: -0.28px;
+    span {
+        &:first-child {
+            opacity: 0.7;
+        }
+        &:last-child {
+            opacity: 0.4;
+        }
+    }
+}
+
+
+.slider-container {
+    max-width: 955px;
+    height: 6px;
+    flex-shrink: 0;
+    border-radius: 56px;
+    opacity: 0.4;
+    background: $ui-color-muted-navy;
+    position: relative;
+    margin: 20px auto;
+    overflow: hidden;
+}
+
+.slider {
+    height: 6px;
+    flex-shrink: 0;
+    border-radius: 56px;
+    background: $ui-color-smoky-blue;
+    position: absolute;
+    left: 0;
+    transition: left 0.3s ease;
+}
+
+.slick-track {
+    display: flex !important;
+}
+
+.slick-list {
+    overflow: visible !important;
+}

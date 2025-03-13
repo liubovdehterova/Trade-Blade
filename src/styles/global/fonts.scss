@@ -1,0 +1,35 @@
+@font-face {
+    font-family: 'IBMPlexSans-Medium';
+    src: url('../fonts/IBMPlexSans-Medium.eot');
+    src: url('../fonts/IBMPlexSans-Medium.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/IBMPlexSans-Medium.woff2') format('woff2'),
+        url('../fonts/IBMPlexSans-Medium.woff') format('woff'),
+        url('../fonts/IBMPlexSans-Medium.svg#IBMPlexSans-MediumI') format('svg');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'IBMPlexSans-Regular';
+    src: url('../fonts/IBMPlexSans-Regular.eot');
+    src: url('../fonts/IBMPlexSans-Regular.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/IBMPlexSans-Regular.woff2') format('woff2'),
+        url('../fonts/IBMPlexSans-Regular.woff') format('woff'),
+        url('../fonts/IBMPlexSans-Regular.svg#IBMPlexSans-Regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'IBMPlexSans-Bold';
+    src: url('../fonts/IBMPlexSans-Bold.eot');
+    src: url('../fonts/IBMPlexSans-Bold.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/IBMPlexSans-Bold.woff2') format('woff2'),
+        url('../fonts/IBMPlexSans-Bold.woff') format('woff'),
+        url('../fonts/IBMPlexSans-Bold.svg#IBMPlexSans-Bold') format('svg');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}

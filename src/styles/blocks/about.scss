@@ -1,0 +1,109 @@
+@use "../_mixin/mixin" as *;
+@use "../_variables/variables" as *;
+
+.about {
+    background-color: $ui-color-white;
+    padding: 56px 0 88px;
+    position: relative;
+    @media screen and (max-width: $ui-breakpoint-xl-max) {
+        padding: 24px 0 133px;
+    }
+
+    &__wrapper {
+        @include ui-flex(space-between, flex-start);
+        gap: 20px;
+        position: relative;
+        @media screen and (max-width: $ui-breakpoint-xl-max) {
+            @include ui-flex(space-between, flex-start, wrap, column);
+        }
+    }
+
+    &__content {
+        max-width: 415px;
+        @media screen and (max-width: $ui-breakpoint-xxl-max) {
+            max-width: 45%;
+        }
+        @media screen and (max-width: $ui-breakpoint-xl-max) {
+            max-width: 100%;
+        }
+        p {
+            color: $ui-color-obsidian-blue;
+            font-family: 'IBMPlexSans-Regular';
+            font-size: $ui-font-size-content;
+            line-height: $line-height-md;
+            opacity: 0.8;
+            margin-bottom: 25px;
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+        .subtitle {
+            margin-bottom: 40px;
+        }
+    }
+    &__form {
+        max-width: 630px;
+        padding: 32px 64px 40px;
+        border-radius: 4px;
+        background: $ui-color-purple;
+        @media screen and (max-width: $ui-breakpoint-xxl-max) {
+            max-width: 52%;
+        }
+        @media screen and (max-width: $ui-breakpoint-xl-max) {
+            max-width: 100%;
+            width: 100%;
+            position: absolute;
+            bottom: -285px;
+            left: 0;
+            right: 0;
+        }
+        @media screen and (max-width: $ui-breakpoint-md-max) {
+            padding: 16px;
+            bottom: -265px;
+        }
+        &__description {
+            color: $ui-color-white;
+            text-align: center;
+            font-family: 'IBMPlexSans-Medium';
+            font-size: $ui-font-size-title-h4;
+            line-height: 36px;
+            letter-spacing: -1.12px;
+            margin-bottom: 32px;
+            @media screen and (max-width: $ui-breakpoint-xxl-max) {
+                font-size: $ui-font-size-title-h5;
+            }
+            @media screen and (max-width: $ui-breakpoint-md-max) {
+                font-size: $ui-font-size-title-h6;
+                line-height: 28px;
+                margin-bottom: 20px;
+            }
+        }
+        .subscribe-form {
+            @media screen and (max-width: $ui-breakpoint-md-max) {
+                margin-bottom: 0;
+            }
+        }
+        .input-wrapper {
+            @media screen and (max-width: $ui-breakpoint-xxl-max) {
+                max-width: 100%;
+            }
+            @media screen and (max-width: $ui-breakpoint-md-max) {
+                @include ui-flex(space-between, flex-start, wrap, column);
+            }
+            input {
+                background: $ui-color-indigo-plum;
+                color: rgba(255, 255, 255, 0.34);
+                @media screen and (max-width: $ui-breakpoint-md-max) {
+                    margin-bottom: 8px;
+                }
+            }
+            .reg {
+                 @media screen and (max-width: $ui-breakpoint-md-max) {
+                    position: static;
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+
