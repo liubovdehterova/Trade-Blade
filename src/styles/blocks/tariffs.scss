@@ -46,6 +46,10 @@
                     font-size: 18px;
                     padding: 10px 60px;
                 }
+                @media screen and (max-width: $ui-breakpoint-s-max) {
+                    font-size: $ui-font-size-content;
+                    padding: 10px 60px;
+                }
 
             &.futures {
                 letter-spacing: -0.96px;
